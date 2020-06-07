@@ -3,62 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat App</title>
+    <title>Chat App - Join</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
-    <div class="container-fluid">
-        <div class="row msgContainer">
-            <div class="col-md-3 bg-dark text-light p-4">
-                <H2>People</H2>
-                <div id="users"></div>
-            </div>
-            <div class="col-md-9">
-                <div class="row d-block p-4 overflow-auto" id="messages"></div>
-                <div class="row bg-light m-auto text-center">
-                    <form action="" id="message-form" class="col-md-10 mr-auto">
-                        <div class="row">
-                            <div class="col-md-10">
-                                <input type="text" class="form-control p-4" name="message" placeholder="Message" autofocus autocomplete="off">
-                            </div>
-                            <div class="col-md-2">
-                                <button class="btn btn-dark h-100 w-100">Send</button>
-                            </div>
-                        </div>
-                    </form>
-                    <button class="btn btn-dark col-md-2 mr-auto" type="button" id="sendLocation" class="btn btn-primary">Send location</button>
-                </div>
+<body class="bg-dark">
+    <div class="outer">
+        <div class="middle">
+            <div class="login-form inner">
+                <form action="/chat.html" class="login-form bg-light rounded">
+                    <H1 class="text-center">Join A Chat</H1>
+                    <div class="form-group">
+                        <label>Display Name</label>
+                        <input type="text" class="form-control" name="name" autofocus />
+                    </div>
+                    <div class="form-group">
+                        <label>Room Name</label>
+                        <input type="text" class="form-control" name="room" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary w-100">Join ChatRoom</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-
-    <script id="message-template" type="text/template">
-        <div class="card w-75 m-2">
-            <div class="card-header">
-                <span class="font-weight-bold mr-2">{{from}}</span>
-                <span span class="text-secondary ml-2 float-right">({{time}})</span>
-            </div>
-            <div class="card-body">{{text}}</div>
-        </div>
-    </script>
-    <script id="location-message-template" type="text/template">
-        <div class="card w-75 m-2">
-            <div class="card-header">
-                <span class="font-weight-bold mr-2">{{from}}</span>
-                <span span class="text-secondary ml-2 float-right">({{time}})</span>
-            </div>
-            <div class="card-body">
-                <p>Click on below link to open my current location in google maps.</p>
-                <a target="_BLANK" href="{{url}}">My Current Location</a>
-            </div>
-        </div>
-    </script>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="./js/libs/jquery-3.5.1.min.js"></script>
-    <script src="./js/libs/moment.js"></script>
-    <script src="./js/libs/mustache.js"></script>
-    <script src="./js/index.js"></script>
 </body>
 </html>
