@@ -2,8 +2,21 @@
     height: 100vh;
 }
 
-#messages{
+#messages {
     height: 93vh;
+}
+
+#users > ol {
+    padding: 0;
+}
+#users > ol > li {
+    list-style-position: inside;
+    background-color: #f8f9fa !important;
+    color: #343a40!important;
+    padding: 5%;
+    margin: 0px;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .outer {
@@ -26,7 +39,7 @@
     width: 400px;
 }
 
-.login-form{
+.login-form {
     margin: auto; 
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); 
     padding: 30px;
