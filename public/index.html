@@ -4,17 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <H1>Welcome to the chat app</H1>
+    <div class="container-fluid">
+        <div class="row msgContainer">
+            <div class="col-md-3 bg-dark text-light p-4">
+                <H2>People</H2>
+                <div id="users"></div>
+            </div>
+            <div class="col-md-9">
+                <div class="row d-block p-4" id="messages"></div>
+                <div class="row bg-light m-auto text-center">
+                    <form action="" id="message-form" class="col-md-10 mr-auto">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <input type="text" class="form-control p-4" name="message" placeholder="Message" autofocus autocomplete="off">
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-dark h-100 w-100">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                    <button class="btn btn-dark col-md-2 mr-auto" type="button" id="sendLocation" class="btn btn-primary">Send location</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- <ol id="messages"></ol>
     <form action="" id="message-form">
-        <input type="text" name="message" placeholder="Enter Message Here">
-        <button>Send</button>
     </form>
-    <button type="button" id="sendLocation">Send Location</button>
-
-    <ol id="messages"></ol>
+    <button type="button" id="sendLocation" class="btn btn-primary">Send Location</button> -->
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="./js/libs/jquery-3.5.1.min.js"></script>
