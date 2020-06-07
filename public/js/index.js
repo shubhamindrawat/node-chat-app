@@ -5,9 +5,13 @@ socket.on('connect', function(){
 
 socket.on('newMessage', function(message){
     var formattedTime = moment(message.createdAt).format('Do MMM, YYYY  hh:mm:ss a');
-    var li = $('<div></div>');
-    li.text(`(${formattedTime}) ${message.from}: ${message.text}`);
-    $('#messages').append(li);
+    var template = $('#message-template').html();
+    var html = Mustache.render(template, {
+        from: message.from,
+        text: message.text,
+        time: formattedTime
+    });
+    $('#messages').append(html);
 });
 
 socket.on('disconnect', function(){
@@ -20,12 +24,13 @@ socket.on('newEmail', function(email){
 
 socket.on('newLocationMessage',  function(message){
     var formattedTime = moment(message.createdAt).format('Do MMM, YYYY  hh:mm:ss a')
-    var li = $('<div></div>');
-    var a = $('<a target="_BLANK">My Current Location</a>');
-    li.text(`(${formattedTime}) ${message.from}: `);
-    a.attr('href', message.url)
-    li.append(a);
-    $('#messages').append(li);
+    var template = $('#location-message-template').html();
+    var html = Mustache.render(template, {
+        from: message.from,
+        url: message.url,
+        time: formattedTime
+    });
+    $('#messages').append(html);
 });
 
 $('#message-form').on('submit', function(e){
