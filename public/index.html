@@ -15,7 +15,7 @@
                 <div id="users"></div>
             </div>
             <div class="col-md-9">
-                <div class="row d-block p-4" id="messages"></div>
+                <div class="row d-block p-4 overflow-auto" id="messages"></div>
                 <div class="row bg-light m-auto text-center">
                     <form action="" id="message-form" class="col-md-10 mr-auto">
                         <div class="row">
@@ -37,7 +37,7 @@
         <div class="card w-75 m-2">
             <div class="card-header">
                 <span class="font-weight-bold mr-2">{{from}}</span>
-                <span span class="text-secondary ml-2">({{time}})</span>
+                <span span class="text-secondary ml-2 float-right">({{time}})</span>
             </div>
             <div class="card-body">{{text}}</div>
         </div>
@@ -46,7 +46,7 @@
         <div class="card w-75 m-2">
             <div class="card-header">
                 <span class="font-weight-bold mr-2">{{from}}</span>
-                <span span class="text-secondary ml-2">({{time}})</span>
+                <span span class="text-secondary ml-2 float-right">({{time}})</span>
             </div>
             <div class="card-body">
                 <p>Click on below link to open my current location in google maps.</p>
