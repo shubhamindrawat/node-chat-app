@@ -54,6 +54,12 @@ socket.on('updateUserList', function (users) {
 socket.on('newEmail', function(email){
     console.log('New Email', email);
 });
+socket.on('newBroadcast', function(broadcast){
+    var template = $('#broadcast-template').html();
+    var html = Mustache.render(template, { message: broadcast.text });
+    $('#messages').append(html);
+    scrollToBottom();
+});
 
 socket.on('newLocationMessage',  function(message){
     var formattedTime = moment(message.createdAt).format('Do MMM, YYYY  hh:mm:ss a')
